@@ -152,7 +152,7 @@ mv $wd/$name.txt $wd/$de.txt
 
 ## SOAL 3
 
-### Berikut adalah soal 3
+#### Berikut adalah soal 3
 1 tahun telah berlalu sejak pencampakan hati Kusuma. Akankah sang pujaan hati
 kembali ke naungan Kusuma? Memang tiada maaf bagi Elen. Tapi apa daya hati yang
 sudah hancur, Kusuma masih terguncang akan sikap Elen. Melihat kesedihan Kusuma,
