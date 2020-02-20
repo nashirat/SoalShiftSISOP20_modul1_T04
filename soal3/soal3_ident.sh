@@ -1,6 +1,16 @@
 #!/bin/bash
 wd=`pwd`
 
+if [ ! -d $wd/kenangan ];
+then
+  mkdir -p $wd/kenangan;
+fi
+
+if [ ! -d $wd/duplicate ];
+then
+  mkdir -p $wd/duplicate;
+fi
+
 a=`ls $wd | grep "pdkt_kusuma" | cut -d "_" -f 3 | sort -n | tail -1`
 ar=""
 
