@@ -189,7 +189,7 @@ merupakan hasil dari grep "Location".
 
 #### Link code soal 3 :
 ##### Source Code : [soal3.sh](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/soal3/soal3.sh) - Soal 3a
-##### crontab : [crontabsoal3](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/soal3/crontabsoal3.sh) - Soal 3b
+##### crontab : [crontabsoal3](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/soal3/crontabsoal3) - Soal 3b
 ##### Identifikasi : [soal3_ident.sh](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/soal3/soal3_ident.sh) - Soal 3c
 #### Penyelesaian dan penjelasan soal 3 :
 
