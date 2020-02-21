@@ -21,6 +21,7 @@ sedikit berdasarkan 2 negara bagian (state) hasil poin b
 
 Whits memohon kepada kalian yang sudah jago mengolah data untuk mengerjakan
 laporan tersebut.
+
 *Gunakan Awk dan Command pendukung
 
 #### Link code soal 1 :
