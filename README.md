@@ -3,6 +3,8 @@
 ## Teknologi Informasi Kelompok T04
 __Muhammad Sulthon Nashir (05311840000011)__
 
+__Bagus Farhan Abdillah (05311840000016)__
+
 ### SOAL 1
 
 #### Berikut adalah soal 1 :
@@ -44,7 +46,7 @@ a=`awk -F "\t" 'NR > 1 {seen[$13]+=$NF} END{for (i in seen) printf "%s,%f\n", i,
  ```bash
  b=`awk -F "\t" -v a=$a '{if (match($13, a)) seen[$11]+=$NF} END {for (i in seen) printf "%s,%f\n", i, seen[i]}' $wd/Sample-Superstore.tsv | sort -g -t  "," -k 2 | awk -F "," 'NR < 3 {printf "%s\n", $1}'`
  ```
- * Logika yang digunakan disini sama persis dengan soal 1a, hanya kita tambahkan saja __match__ untuk tab ke __13__ yang isinya adalah __region__, dengan logika jika __tab 13__ adalah __a___, maka jumlahkan profit menggunakan __seen__ untuk setiap __seen__ yang berbeda.
+ * Logika yang digunakan disini sama persis dengan soal 1a, hanya kita tambahkan saja __match__ untuk tab ke __13__ yang isinya adalah __region__, dengan logika jika __tab 13__ adalah __a__, maka jumlahkan profit menggunakan __seen__ untuk setiap __seen__ yang berbeda.
  * __NR < 3__ karena kita disini membutuhkan 2 output, yang kita simpan dalam variabel __b__.
 ```bash
 s1=`echo $b | awk -F " " '{printf "%s", $1}'`
@@ -127,7 +129,7 @@ ds=$(echo {a..z} | sed -r 's/ //g')
 dc=$(echo $ds | sed -r "s/^.{$key}//g")$(echo $ds | sed -r "s/.{$( expr 26 - $key )}$//g")
 en=`echo $name | tr '[A-Z]' $ds | tr $ds $dc`
 ```
-* __ds__ berfungsi untuk menghapus karakter __spasi" "__ pada __echo {a..}__.
+* __ds__ berfungsi untuk menghapus karakter __spasi(" ")__ pada __echo {a..}__.
 * __dc__ dibagi menjadi dua bagian yaitu yang pertama untuk memotong __echo {a..z}__ sesuai dengan __$key__ dari depan. Contoh jika __$key__ adalah __2__ maka __"abcdefghijklmnopqrstuvwxyz"__ akan menjadi __"cdefghijklmnopqrstuvwxyz"__.
 * Bagian kedua untuk memotong huruf lain selain tergantung dari __$key__. __"abcdefghijklmnopqrstuvwxyz"__ akan menjadi __"ab"__ jika __$key__ adalah __2__.
 * Kedua bagian tersebut akan digabung sehingga __dc__ adalah __"cdefghijklmnopqrstuvwxyzab"__ jika __$key = 2__.
