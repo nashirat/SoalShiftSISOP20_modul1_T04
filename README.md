@@ -65,6 +65,8 @@ s2=`echo $b | awk -F " " '{printf "%s", $2}'`
  * Logika yang digunakan sama persis dengan soal 1b, yang berbeda hanya kita akan print 10, sehingga __NR < 11__ dan akan ada dua output yaitu __nama produk($1)__ dan __value produk($2)__.
  * Untuk profit dari kedua state, kita hanya perlu menambahkan __||__ dalam fungsi __match__, agar nilai dari kedua state bisa dihitung bersamaan.
  * Pada soal 1c kita menggunakan __?__ sebagai separator hasil karena tidak ada produk yang terdapat simbol __?__ didalamnya.
+ #### Output : 
+ ![soal1](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal1.png)
 
 
  ## SOAL 2
@@ -152,6 +154,8 @@ de=`echo $name | tr '[A-Z]' $ds | tr $dc $ds`
 mv $wd/$name.txt $wd/$de.txt
 ```
 * Karena __md5sum (hashing)__ menggunakan isi file bukan nama file, metode dekripsi sama persis dengan metode enkripsi. Kita hanya perlu membalik posisi __ds__ dan __dc__ sehingga rotasi terbalik.
+#### Output : 
+![soal2](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal2.png)
 
 ## SOAL 3
 
@@ -273,3 +277,7 @@ cat $wd/wget.log >> $wd/wget.log.bak
 rm $wd/wget.log
 ```
 * Tamplikan __wget.log__ lalu masukkan per line dengan menggunakan __>>__ ke __wget.log.bak__, lalu hapus __wget.log__.
+#### Output : 
+![soal3a](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3a.png)
+![soal3ckenangan](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3ckenangan.png)
+![soal3cduplikat](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3cduplikat.png)
