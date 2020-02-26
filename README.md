@@ -65,7 +65,7 @@ s2=`echo $b | awk -F " " '{printf "%s", $2}'`
  * Logika yang digunakan sama persis dengan soal 1b, yang berbeda hanya kita akan print 10, sehingga __NR < 11__ dan akan ada dua output yaitu __nama produk($1)__ dan __value produk($2)__.
  * Untuk profit dari kedua state, kita hanya perlu menambahkan __||__ dalam fungsi __match__, agar nilai dari kedua state bisa dihitung bersamaan.
  * Pada soal 1c kita menggunakan __?__ sebagai separator hasil karena tidak ada produk yang terdapat simbol __?__ didalamnya.
- #### Output : 
+ #### Output :
  ![soal1](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal1.png)
 
 
@@ -100,9 +100,20 @@ HINT: enkripsi yang digunakan adalah caesar cipher.
 #### Penyelesaian dan penjelasan soal 3 :
 ##### 2a. dan 2b.
 ```Bash
-pass="`cat /dev/urandom | tr -cd 'a-zA-Z0-9' | fold -w 28 | head -n 1`"
+choose() { echo ${1:RANDOM%${#1}:1} $RANDOM; }
+pass="$({
+for i in $( seq 10 )
+do
+  choose '0123456789'
+  choose 'abcdefghijklmnopqrstuvwxyz'
+  choose 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+done
+}| sort -R | awk '{printf "%s" ,$1}' | cut -d " " -f 2 | fold -w 28 | head -n 1)"
 ```
-* Kita akan gunakan __urandom__ untuk menghasilkan password acak, dengan batasan hanya berupa __alphanumeric__ menggunakan fungsi __tr -cd__, lalu pangkas hanya 28 karakter dengan menggunakan __fold__, lalu ambil 1 saja dengan menggunakan __head__.
+* Kita gunakan __choose__ dan __regex__ untuk memilih 1 argumen, 1 string, dan secara random memilih 1 string dari argumen tersebut.
+* Simpan hasil ke variabel __$pass__. Lalu buat 3 buah __choose__ yang isinya __angka__, __lowercase__, dan __uppercase__.
+* Gunakan pengulangan __for__ untuk setiap argumen tersebut, sehingga akan ada 3 karakter dalam password.
+* Jika ingin mendapat 28 karakter, maka __seq__ __i__ sebanyak __10 kali (10*3)__ lalu __cut__ karakter yang melebihi.
 
 ```Bash
 name="`echo $1 | tr -cd 'a-zA-Z'`"
@@ -154,7 +165,7 @@ de=`echo $name | tr '[A-Z]' $ds | tr $dc $ds`
 mv $wd/$name.txt $wd/$de.txt
 ```
 * Karena __md5sum (hashing)__ menggunakan isi file bukan nama file, metode dekripsi sama persis dengan metode enkripsi. Kita hanya perlu membalik posisi __ds__ dan __dc__ sehingga rotasi terbalik.
-#### Output : 
+#### Output :
 ![soal2](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal2.png)
 
 ## SOAL 3
@@ -277,7 +288,7 @@ cat $wd/wget.log >> $wd/wget.log.bak
 rm $wd/wget.log
 ```
 * Tamplikan __wget.log__ lalu masukkan per line dengan menggunakan __>>__ ke __wget.log.bak__, lalu hapus __wget.log__.
-#### Output : 
+#### Output :
 ![soal3a](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3a.png)
 ![soal3ckenangan](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3ckenangan.png)
 ![soal3cduplikat](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3cduplikat.png)
