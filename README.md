@@ -119,7 +119,7 @@ done
 name="`echo $1 | tr -cd 'a-zA-Z'`"
 echo $pass > $wd/$name.txt
 ```
-* Setelah itu lakukan __tr__ untuk menghapus judul yang tidal alphabet
+* Setelah itu lakukan __tr__ untuk menghapus judul yang tidak alphabet
 * Dengan menggunakan __>__ masukkan __$pass__ ke file yang bernama berdasarkan __$name__
 ```Bash
 namesum="`md5sum $name.txt | cut -d ' ' -f 1`"
@@ -280,7 +280,7 @@ else
 fi
 done
 ```
-* Jika __flag = 0__ maka hapus __array__ dan masukkan __loc__ dengan tambahan __\n__ (karena __head__ dan __tail__ hanya berfungsi pada line), sehingga file yang dijadikan "patokan" berubah ke file berdasarkan line selanjutnya. Pindah file __pdkt_kusuma_$i ke __kenangan__ dengan nama kenangan$i.
+* Jika __flag = 0__ maka hapus __array__ dan masukkan __loc__ dengan tambahan __\n__ (karena __head__ dan __tail__ hanya berfungsi pada line), sehingga file yang dijadikan "patokan" berubah ke file berdasarkan line selanjutnya. Pindah file pdkt_kusuma_$i ke kenangandengan nama kenangan_i.
 * jika __flag != 0__ maka file adalah duplikat dari __loc__ yang sedang diproses, sehingga pindah ke folder __duplicate__.
 
 ```Bash
@@ -292,3 +292,6 @@ rm $wd/wget.log
 ![soal3a](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3a.png)
 ![soal3ckenangan](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3ckenangan.png)
 ![soal3cduplikat](https://github.com/nashirat/SoalShiftSISOP20_modul1_T04/blob/master/img/soal3cduplikat.png)
+
+#### Kendala Soal 3
+* __Crontab__ tidak bisa mendapat environment dari __file script__ sehingga butuh penyesuaian __PATH__ manual.
